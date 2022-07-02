@@ -71,7 +71,7 @@ Plot exposures in multiple plots each with a manageable number of samples
 }
 \examples{
 file <- system.file("extdata",
-  "Liver-HCC.exposure.csv",
+  "synthetic-exposure.csv",
   package = "mSigTools"
 )
 exposure <- read_exposure(file)

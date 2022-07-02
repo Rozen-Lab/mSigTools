@@ -24,7 +24,7 @@ Read an exposure matrix from a file
 }
 \examples{
 file <- system.file("extdata",
-  "Liver-HCC.exposure.csv",
+  "synthetic-exposure.csv",
   package = "mSigTools"
 )
 exposure <- read_exposure(file)

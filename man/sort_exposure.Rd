@@ -21,7 +21,7 @@ Sort columns of an exposure matrix from largest to smallest (or vice versa)
 }
 \examples{
 file <- system.file("extdata",
-  "Liver-HCC.exposure.csv",
+  "synthetic-exposure.csv",
   package = "mSigTools"
 )
 exposure <- read_exposure(file)

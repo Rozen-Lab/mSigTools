@@ -17,7 +17,7 @@
 #'
 #' @examples
 #' file <- system.file("extdata",
-#'   "Liver-HCC.exposure.csv",
+#'   "synthetic-exposure.csv",
 #'   package = "mSigTools"
 #' )
 #' exposure <- read_exposure(file)
@@ -56,12 +56,12 @@ read_exposure <- function(file, check_names = FALSE) {
 #'
 #' @examples
 #' file <- system.file("extdata",
-#'   "Liver-HCC.exposure.csv",
+#'   "synthetic-exposure.csv",
 #'   package = "mSigTools"
 #' )
 #' exposure <- read_exposure(file)
 #' write_exposure(exposure,
-#'   file = file.path(tempdir(), "Liver-HCC.exposure.csv")
+#'   file = file.path(tempdir(), "synthetic-exposure.csv")
 #' )
 write_exposure <- function(exposure, file, row.names = TRUE) {
   old_digits <- getOption("digits")
@@ -84,7 +84,7 @@ write_exposure <- function(exposure, file, row.names = TRUE) {
 #'
 #' @examples
 #' file <- system.file("extdata",
-#'   "Liver-HCC.exposure.csv",
+#'   "synthetic-exposure.csv",
 #'   package = "mSigTools"
 #' )
 #' exposure <- read_exposure(file)
@@ -369,7 +369,7 @@ plot_exposure_internal <-
 #'
 #' @examples
 #' file <- system.file("extdata",
-#'   "Liver-HCC.exposure.csv",
+#'   "synthetic-exposure.csv",
 #'   package = "mSigTools"
 #' )
 #' exposure <- read_exposure(file)
@@ -469,7 +469,7 @@ plot_exposure <- function(exposure,
 #'
 #' @examples
 #' file <- system.file("extdata",
-#'   "Liver-HCC.exposure.csv",
+#'   "synthetic-exposure.csv",
 #'   package = "mSigTools"
 #' )
 #' exposure <- read_exposure(file)

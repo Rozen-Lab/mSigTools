@@ -22,11 +22,11 @@ Write an exposure matrix to a file
 }
 \examples{
 file <- system.file("extdata",
-  "Liver-HCC.exposure.csv",
+  "synthetic-exposure.csv",
   package = "mSigTools"
 )
 exposure <- read_exposure(file)
 write_exposure(exposure,
-  file = file.path(tempdir(), "Liver-HCC.exposure.csv")
+  file = file.path(tempdir(), "synthetic-exposure.csv")
 )
 }
