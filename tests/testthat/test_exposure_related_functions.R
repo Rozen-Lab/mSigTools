@@ -6,13 +6,13 @@ test_that("Read and write exposure", {
   reread.x <- read_exposure(tfile)
   expect_equal(x, reread.x)
 
-  x <- read_exposure(file, check = FALSE)
+  x <- read_exposure(file, check_names = FALSE)
   write_exposure(x, tfile)
-  x2 <- read_exposure(tfile, check = FALSE)
+  x2 <- read_exposure(tfile, check_names = FALSE)
   expect_equal(x, x2)
 
   file2 <- "testdata/tiny.exposure.dup.csv"
-  expect_error(x <- read_exposure(file2, check = FALSE))
+  expect_error(x <- read_exposure(file2, check_names = FALSE))
 })
 
 test_that("plot_exposure_internal function", {

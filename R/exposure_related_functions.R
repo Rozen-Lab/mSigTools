@@ -9,6 +9,8 @@
 #' If \code{check_names} is true, generate a warning
 #' if double colons were present.
 #'
+#' @param check.names Deprecated version of check_names
+#'
 #' @return Matrix of exposures.
 #'
 #' @importFrom utils read.csv
@@ -21,7 +23,7 @@
 #'   package = "mSigTools"
 #' )
 #' exposure <- read_exposure(file)
-read_exposure <- function(file, check_names = FALSE) {
+read_exposure <- function(file, check_names = FALSE, check.names = check_names) {
   if (check_names) {
     headers <-
       read.csv(file, nrow = 1, header = FALSE, stringsAsFactors = FALSE)

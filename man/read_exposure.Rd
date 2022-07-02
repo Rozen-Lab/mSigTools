@@ -4,7 +4,7 @@
 \alias{read_exposure}
 \title{Read an exposure matrix from a file}
 \usage{
-read_exposure(file, check_names = FALSE)
+read_exposure(file, check_names = FALSE, check.names = check_names)
 }
 \arguments{
 \item{file}{CSV file containing an exposure matrix.}
@@ -15,6 +15,8 @@ colon in identifiers of the form <tumor_type>::<sample_id>
 with two periods (i.e. <tumor_type>..<sample_id>.
 If \code{check_names} is true, generate a warning
 if double colons were present.}
+
+\item{check.names}{Deprecated version of check_names}
 }
 \value{
 Matrix of exposures.
