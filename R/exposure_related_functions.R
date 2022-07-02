@@ -9,7 +9,8 @@
 #' If \code{check_names} is true, generate a warning
 #' if double colons were present.
 #'
-#' @param check.names Deprecated version of check_names
+#' @param check.names Deprecated version of check_names. If
+#'  \code{check.names} the behavior is as if \code{check_names} is \code{TRUE}.
 #'
 #' @return Matrix of exposures.
 #'
@@ -24,7 +25,7 @@
 #' )
 #' exposure <- read_exposure(file)
 read_exposure <- function(file, check_names = FALSE, check.names = check_names) {
-  if (check_names) {
+  if (check_names || check.names) {
     headers <-
       read.csv(file, nrow = 1, header = FALSE, stringsAsFactors = FALSE)
     double.colon <- grep("::", unlist(headers)[-1], fixed = TRUE)

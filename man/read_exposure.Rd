@@ -16,7 +16,8 @@ with two periods (i.e. <tumor_type>..<sample_id>.
 If \code{check_names} is true, generate a warning
 if double colons were present.}
 
-\item{check.names}{Deprecated version of check_names}
+\item{check.names}{Deprecated version of check_names. If
+\code{check.names} the behavior is as if \code{check_names} is \code{TRUE}.}
 }
 \value{
 Matrix of exposures.
