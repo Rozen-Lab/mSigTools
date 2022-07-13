@@ -20,7 +20,7 @@ match_two_sig_sets(
 \item{x2}{A numerical-matrix-like object with columns as signatures.
 Needs to have the same number of rows as \code{x1}.}
 
-\item{method}{A character string that specifies a method for 
+\item{method}{A character string that specifies a method for
 \code{\link[philentropy]{distance}}.}
 
 \item{convert.sim.to.dist}{If \code{method} specifies a similarity
@@ -36,7 +36,7 @@ Find an optimal matching between two sets of signatures subject to a maximum dis
 \details{
 Match signatures between \code{x1} and \code{x2}
     using the function
-   \code{\link[clue]{solve_LSAP}}, which uses the 
+   \code{\link[clue]{solve_LSAP}}, which uses the
    "Hungarian" (a.k.a "Kuhn–Munkres") algorithm
    \url{https://en.wikipedia.org/wiki/Hungarian_algorithm},
    which optimizes the total cost associated with the links
@@ -46,7 +46,7 @@ Match signatures between \code{x1} and \code{x2}
    sets of signatures.
    It sets distances > \code{cutoff} to very large values.
    It then applies \code{\link[clue]{solve_LSAP}} to the resulting
-   matrix to compute a matching between 
+   matrix to compute a matching between
    \code{x1} and \code{x2} that minimizes the sum of the
    distances.
 }
@@ -56,6 +56,5 @@ colnames(ex.sigs) <- c("ex1", "ex2", "ex3")
 gt.sigs <- matrix(c(0.21, 0.79, 0.19, 0.81), nrow = 2)
 colnames(gt.sigs) <- c("gt1", "gt2")
 match_two_sig_sets(ex.sigs, gt.sigs, cutoff = .9)
-
 
 }

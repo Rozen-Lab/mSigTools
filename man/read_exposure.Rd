@@ -4,20 +4,17 @@
 \alias{read_exposure}
 \title{Read an exposure matrix from a file}
 \usage{
-read_exposure(file, check_names = FALSE, check.names = check_names)
+read_exposure(file, check.names = FALSE)
 }
 \arguments{
 \item{file}{CSV file containing an exposure matrix.}
 
-\item{check_names}{Passed to \code{read.csv}.
+\item{check.names}{Passed to \code{read.csv}.
 \strong{IMPORTANT}: If \code{TRUE} this will replace the double
 colon in identifiers of the form <tumor_type>::<sample_id>
 with two periods (i.e. <tumor_type>..<sample_id>.
-If \code{check_names} is true, generate a warning
+If \code{check.names} is true, generate a warning
 if double colons were present.}
-
-\item{check.names}{Deprecated version of check_names. If
-\code{check.names} the behavior is as if \code{check_names} is \code{TRUE}.}
 }
 \value{
 Matrix of exposures.
@@ -27,7 +24,7 @@ Read an exposure matrix from a file
 }
 \examples{
 file <- system.file("extdata",
-  "synthetic-exposure.csv",
+  "Liver-HCC.exposure.csv",
   package = "mSigTools"
 )
 exposure <- read_exposure(file)

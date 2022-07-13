@@ -1,7 +1,7 @@
 Package: mSigTools
 Type: Package
 Title: Mutational Signature analysis Tools
-Version: 0.1.2
+Version: 1.0.0
 Authors@R: 
     c(person(given = "Steven",
              family = "Rozen",
@@ -24,5 +24,6 @@ RoxygenNote: 7.2.0
 Imports: clue,
     philentropy
 Suggests: 
+    spelling,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

@@ -2,7 +2,7 @@
 % Please edit documentation in R/sig_dist_matrix.R
 \name{sig_dist_matrix}
 \alias{sig_dist_matrix}
-\title{Compute a matrix of distances / similarities between two sets of signatures.}
+\title{Compute a matrix of distances / similarities between two sets of signatures}
 \usage{
 sig_dist_matrix(x1, x2, method = "cosine")
 }
@@ -21,7 +21,7 @@ A matrix with dimensions \code{ncol(x1)} X \code{ncol(x2)} with
   between the corresponding elements of \code{x1} and \code{x2}
 }
 \description{
-Compute a matrix of distances / similarities between two sets of signatures.
+Compute a matrix of distances / similarities between two sets of signatures
 }
 \examples{
 ex.sigs <- matrix(c(0.2, 0.8, 0.3, 0.7, 0.4, 0.6), nrow = 2)
@@ -29,4 +29,5 @@ colnames(ex.sigs) <- c("ex1", "ex2", "ex3")
 gt.sigs <- matrix(c(0.21, 0.79, 0.19, 0.81), nrow = 2)
 colnames(gt.sigs) <- c("gt1", "gt2")
 sig_dist_matrix(ex.sigs, gt.sigs)
+
 }

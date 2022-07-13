@@ -2,15 +2,12 @@
 #'
 #' @param file CSV file containing an exposure matrix.
 #'
-#' @param check_names Passed to \code{read.csv}.
+#' @param check.names Passed to \code{read.csv}.
 #' \strong{IMPORTANT}: If \code{TRUE} this will replace the double
 #' colon in identifiers of the form <tumor_type>::<sample_id>
 #' with two periods (i.e. <tumor_type>..<sample_id>.
-#' If \code{check_names} is true, generate a warning
+#' If \code{check.names} is true, generate a warning
 #' if double colons were present.
-#'
-#' @param check.names Deprecated version of check_names. If
-#'  \code{check.names} the behavior is as if \code{check_names} is \code{TRUE}.
 #'
 #' @return Matrix of exposures.
 #'
@@ -20,21 +17,19 @@
 #'
 #' @examples
 #' file <- system.file("extdata",
-#'   "synthetic-exposure.csv",
+#'   "Liver-HCC.exposure.csv",
 #'   package = "mSigTools"
 #' )
 #' exposure <- read_exposure(file)
-read_exposure <- function(file, check_names = FALSE, check.names = check_names) {
-  if (check_names || check.names) {
-    headers <-
-      read.csv(file, nrow = 1, header = FALSE, stringsAsFactors = FALSE)
+read_exposure <- function(file, check.names = FALSE) {
+  if (check.names) {
+    headers <- read.csv(file, nrow = 1, header = FALSE, stringsAsFactors = FALSE)
     double.colon <- grep("::", unlist(headers)[-1], fixed = TRUE)
     if (length(double.colon) > 0) {
-      warning(":: in sample ID replaced by ..;
-              suggest calling with check_names = FALSE")
+      warning(":: in sample ID replaced by ..; suggest calling with check.names = FALSE")
     }
   }
-  retval <- read.csv(file, row.names = 1, check.names = check_names)
+  retval <- read.csv(file, row.names = 1, check.names = check.names)
   if (any(duplicated(colnames(retval)))) {
     stop("There is duplicated column name in the input file")
   }
@@ -59,18 +54,16 @@ read_exposure <- function(file, check_names = FALSE, check.names = check_names) 
 #'
 #' @examples
 #' file <- system.file("extdata",
-#'   "synthetic-exposure.csv",
+#'   "Liver-HCC.exposure.csv",
 #'   package = "mSigTools"
 #' )
 #' exposure <- read_exposure(file)
-#' write_exposure(exposure,
-#'   file = file.path(tempdir(), "synthetic-exposure.csv")
-#' )
+#' write_exposure(exposure, file = file.path(tempdir(), "Liver-HCC.exposure.csv"))
 write_exposure <- function(exposure, file, row.names = TRUE) {
-  old_digits <- getOption("digits")
+  old.digits <- getOption("digits")
   options(digits = 22)
   write.csv(exposure, file, row.names = row.names)
-  on.exit(options(digits = old_digits))
+  on.exit(options(digits = old.digits))
 }
 
 #' Sort columns of an exposure matrix from largest to smallest (or vice versa)
@@ -87,7 +80,7 @@ write_exposure <- function(exposure, file, row.names = TRUE) {
 #'
 #' @examples
 #' file <- system.file("extdata",
-#'   "synthetic-exposure.csv",
+#'   "Liver-HCC.exposure.csv",
 #'   package = "mSigTools"
 #' )
 #' exposure <- read_exposure(file)
@@ -372,7 +365,7 @@ plot_exposure_internal <-
 #'
 #' @examples
 #' file <- system.file("extdata",
-#'   "synthetic-exposure.csv",
+#'   "Liver-HCC.exposure.csv",
 #'   package = "mSigTools"
 #' )
 #' exposure <- read_exposure(file)
@@ -472,7 +465,7 @@ plot_exposure <- function(exposure,
 #'
 #' @examples
 #' file <- system.file("extdata",
-#'   "synthetic-exposure.csv",
+#'   "Liver-HCC.exposure.csv",
 #'   package = "mSigTools"
 #' )
 #' exposure <- read_exposure(file)

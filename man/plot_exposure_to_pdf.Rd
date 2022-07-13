@@ -92,7 +92,7 @@ Plot exposures in multiple plots each with a manageable number of samples to PDF
 }
 \examples{
 file <- system.file("extdata",
-  "synthetic-exposure.csv",
+  "Liver-HCC.exposure.csv",
   package = "mSigTools"
 )
 exposure <- read_exposure(file)
