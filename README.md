@@ -40,4 +40,4 @@ remotes::install_github(repo = "Rozen-Lab/mSigTools", ref = "master")
 
 ## Reference manual
 
-<https://github.com/Rozen-Lab/mSigTools/blob/main/mSigTools_1.0.0.pdf>
+<https://github.com/Rozen-Lab/mSigTools/blob/v1.0.0-branch/mSigTools_1.0.0.pdf>
