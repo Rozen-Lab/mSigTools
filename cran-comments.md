@@ -2,6 +2,7 @@
 
 ## Test environments
 * Local Windows 10 install: R 4.1.3
+* Local macOS Big Sur install: R 4.2.0
 * Local CentOS Stream 8: R 4.1.3
 
 ## R CMD check results
