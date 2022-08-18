@@ -20,7 +20,7 @@ BugReports: https://github.com/Rozen-Lab/mSigTools/issues
 Encoding: UTF-8
 Language: en-US
 LazyData: true
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1
 Imports: clue,
     philentropy
 Suggests: 
