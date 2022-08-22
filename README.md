@@ -12,12 +12,11 @@ v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/li
 
 ## Purpose
 
-A package containing various utility functions for mutational signature
-analysis.
+Utility functions for mutational signature analysis.
 
 ## Installation
 
-### Get the stable version
+### Get the latest released version
 
 ``` r
 if (!requireNamespace("remotes", quietly = TRUE)) {
@@ -40,4 +39,4 @@ remotes::install_github(repo = "Rozen-Lab/mSigTools", ref = "master")
 
 ## Reference manual
 
-<https://github.com/Rozen-Lab/mSigTools/blob/v1.0.0-branch/mSigTools_1.0.0.pdf>
+<https://github.com/Rozen-Lab/mSigTools/blob/v1.0.0-branch/mSigTools_1.0.1.pdf>

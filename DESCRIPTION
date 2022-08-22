@@ -12,8 +12,8 @@ Authors@R:
              family = "Jiang",
              role = "aut",
              comment = c(ORCID = "0000-0003-4974-2753")))
-Description: A package containing various utility functions for 
-    mutational signature analysis.
+Description: mSigTools ("mutational signature analysis tools") provides
+             utility functions for mutational signature analysis.
 License: GPL-3
 URL: https://github.com/Rozen-Lab/mSigTools
 BugReports: https://github.com/Rozen-Lab/mSigTools/issues
