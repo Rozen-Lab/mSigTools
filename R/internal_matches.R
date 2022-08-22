@@ -1,16 +1,4 @@
-
-if (FALSE) {
-  tmp.dd <- matrix(
-    c(0.99, 0.95, 0.89, 0.91),
-    nrow = 2
-  )
-  rownames(tmp.dd) <- c("x1", "x2")
-  colnames(tmp.dd) <- c("g1", "g2")
-  tmp.dd <- 1 - tmp.dd
-  internal_matches(tmp.dd, cutoff = 0.1)
-}
-
-# We break this out as a separate function to simplify testing.
+# We break this out as a separate internal function to simplify testing.
 internal_matches <- function(original.dd, cutoff) {
 
   # Cannot use Inf in the foreign function call clue::solve_LSAP(dd) (below)

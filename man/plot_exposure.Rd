@@ -2,7 +2,7 @@
 % Please edit documentation in R/exposure_related_functions.R
 \name{plot_exposure}
 \alias{plot_exposure}
-\title{Plot exposures in multiple plots each with a manageable number of samples}
+\title{Plot exposures in multiple plots, with each plot showing exposures for a manageable number of samples.}
 \usage{
 plot_exposure(
   exposure,
@@ -67,7 +67,7 @@ An \strong{invisible} list whose first element is a logic value
   adding to the graph.
 }
 \description{
-Plot exposures in multiple plots each with a manageable number of samples
+Plot exposures in multiple plots, with each plot showing exposures for a manageable number of samples.
 }
 \examples{
 file <- system.file("extdata",

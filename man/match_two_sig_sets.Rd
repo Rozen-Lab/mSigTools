@@ -2,7 +2,7 @@
 % Please edit documentation in R/match_two_sig_sets.R
 \name{match_two_sig_sets}
 \alias{match_two_sig_sets}
-\title{Find an optimal matching between two sets of signatures subject to a maximum distance}
+\title{Find an optimal matching between two sets of signatures subject to a maximum distance.}
 \usage{
 match_two_sig_sets(
   x1,
@@ -20,8 +20,8 @@ match_two_sig_sets(
 \item{x2}{A numerical-matrix-like object with columns as signatures.
 Needs to have the same number of rows as \code{x1}.}
 
-\item{method}{A character string that specifies a method for
-\code{\link[philentropy]{distance}}.}
+\item{method}{As for the \code{\link[philentropy]{distance}} function in package
+\code{philenropy}.}
 
 \item{convert.sim.to.dist}{If \code{method} specifies a similarity
 rather than a distance, use this function to convert the
@@ -31,7 +31,7 @@ similarity to a distance.}
 pair signatures between \code{x1} and \code{x2}.}
 }
 \description{
-Find an optimal matching between two sets of signatures subject to a maximum distance
+Find an optimal matching between two sets of signatures subject to a maximum distance.
 }
 \details{
 Match signatures between \code{x1} and \code{x2}

@@ -36,7 +36,7 @@ true positives to their matching reference signatures.
 that matched a reference signature.
 Each row contains the extracted signature name,
 the reference signature name, and the
-cosine similarity of the match.
+cosine similarity of the match. The
 \item \code{sim.matrix} The similarity matrix corresponding
 to the input signatures.
 \item \code{unmatched.ex.sigs} The identifiers of
@@ -53,21 +53,8 @@ a set of reference mutational signatures
 }
 \details{
 Match signatures in \code{extracted.sigs} to
-signatures in \code{reference.sigs} using the function
-\code{\link[clue]{solve_LSAP}}, which uses the
-"Hungarian" (a.k.a "Kuhn–Munkres") algorithm
-\url{https://en.wikipedia.org/wiki/Hungarian_algorithm},
-which optimizes the total cost associated with the links
-between nodes.
-The function first computes the
-all-pairs cosine similarity matrix between the two
-sets of signatures, then converts cosine similarities
-to cosine distances (including \code{similarity.cutoff})
-by subtracting from 1, then
-sets distances > the converted cutoff to very large values.
-It then applies \code{\link[clue]{solve_LSAP}} to the resulting
-matrix to compute an optimal matching between
-\code{extracted.sigs} and \code{reference.sigs}.
+signatures in \code{reference.sigs} using \code{\link{match_two_sig_sets}}
+based on cosine similarity.
 }
 \examples{
 ex.sigs <- matrix(c(0.2, 0.8, 0.3, 0.7, 0.6, 0.4), nrow = 2)

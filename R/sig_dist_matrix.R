@@ -1,16 +1,17 @@
-#' Compute a matrix of distances / similarities between two sets of signatures
+#' Compute a matrix of distances / similarities between two sets of signatures.
 #'
-#' @param x1 The first set of signatures (a positive matrix in which each column is a signature).
-#'     The elements of \code{x1} will be the rows of the output matrix
+#' @param x1 The first set of signatures (a numerical matrix-like object
+#'     in which each column is a signature).
 #'
-#' @param x2 The second set of signatures, similar data type to \code{x1}.
-#'     The elements of \code{x2} will be the columns of the output matrix
+#' @param x2 The second set of signatures, similar data type to \code{x1},
+#'     and must have the same number of rows as \code{x1}.
 #'
-#' @param method (as for the \code{philentropy::distance}) function.
+#' @param method As for the \code{\link[philentropy]{distance}} function in package
+#'   \code{philenropy}.
 #'
 #' @return A matrix with dimensions \code{ncol(x1)} X \code{ncol(x2)} with
 #'   each element representing the distance or similarity (depending on \code{method})
-#'   between the corresponding elements of \code{x1} and \code{x2}
+#'   between the column in \code{x1} and a column in \code{x2}.
 #'
 #' @export
 #'

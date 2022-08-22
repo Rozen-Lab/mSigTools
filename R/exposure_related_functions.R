@@ -1,6 +1,9 @@
-#' @title Read an exposure matrix from a file
+#' @title Read an exposure matrix from a file.
 #'
-#' @param file CSV file containing an exposure matrix.
+#' @param file File path to a CSV file containing an exposure matrix, i.e.
+#'  the numbers of mutations due to each mutational signature.
+#'  Each row corresponds to a mutational signature an each
+#'  column corresponds to a tumor or other biological sample.
 #'
 #' @param check.names Passed to \code{read.csv}.
 #' \strong{IMPORTANT}: If \code{TRUE} this will replace the double
@@ -9,7 +12,8 @@
 #' If \code{check.names} is true, generate a warning
 #' if double colons were present.
 #'
-#' @return Matrix of exposures.
+#' @return Numerical matrix of exposures, with the same
+#'  shape as \code{file}.
 #'
 #' @importFrom utils read.csv
 #'
@@ -31,7 +35,7 @@ read_exposure <- function(file, check.names = FALSE) {
   }
   retval <- read.csv(file, row.names = 1, check.names = check.names)
   if (any(duplicated(colnames(retval)))) {
-    stop("There is duplicated column name in the input file")
+    stop("There are duplicated column names in ", file)
   }
   return(data.matrix(retval))
 }
@@ -66,7 +70,7 @@ write_exposure <- function(exposure, file, row.names = TRUE) {
   on.exit(options(digits = old.digits))
 }
 
-#' Sort columns of an exposure matrix from largest to smallest (or vice versa)
+#' Sort columns of an exposure matrix based on the number of mutations in each sample (column).
 #'
 #' @param exposure Exposures as a numerical matrix (or data.frame) with
 #'   signatures in rows and samples in columns. Rownames are taken as the
@@ -92,7 +96,7 @@ sort_exposure <- function(exposure, decreasing = TRUE) {
   return(retval)
 }
 
-#' Plot a single exposure plot
+#' Plot a matrix of exposures in a single plot.
 #'
 #' @param exposure Exposures as a numerical \code{matrix} (or \code{data.frame})
 #'   with signatures in rows and samples in columns. Rownames are taken as the
@@ -344,7 +348,7 @@ plot_exposure_internal <-
     invisible(list(plot.success = TRUE, bp.coordinates = mp))
   }
 
-#' Plot exposures in multiple plots each with a manageable number of samples
+#' Plot exposures in multiple plots, with each plot showing exposures for a manageable number of samples.
 #'
 #' @inheritParams plot_exposure_internal
 #'
@@ -429,7 +433,9 @@ plot_exposure <- function(exposure,
   invisible(list(plot.success = TRUE, bp.coordinates = list$bp.coordinates))
 }
 
-#' Plot exposures in multiple plots each with a manageable number of samples to PDF
+#' Plot exposures in multiple plots to a single PDF file, with each plot showing
+#' exposures for a manageable number of samples.
+#'
 #'
 #' @inheritParams plot_exposure_internal
 #'

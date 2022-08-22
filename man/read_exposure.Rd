@@ -2,12 +2,15 @@
 % Please edit documentation in R/exposure_related_functions.R
 \name{read_exposure}
 \alias{read_exposure}
-\title{Read an exposure matrix from a file}
+\title{Read an exposure matrix from a file.}
 \usage{
 read_exposure(file, check.names = FALSE)
 }
 \arguments{
-\item{file}{CSV file containing an exposure matrix.}
+\item{file}{File path to a CSV file containing an exposure matrix, i.e.
+the numbers of mutations due to each mutational signature.
+Each row corresponds to a mutational signature an each
+column corresponds to a tumor or other biological sample.}
 
 \item{check.names}{Passed to \code{read.csv}.
 \strong{IMPORTANT}: If \code{TRUE} this will replace the double
@@ -17,10 +20,11 @@ If \code{check.names} is true, generate a warning
 if double colons were present.}
 }
 \value{
-Matrix of exposures.
+Numerical matrix of exposures, with the same
+ shape as \code{file}.
 }
 \description{
-Read an exposure matrix from a file
+Read an exposure matrix from a file.
 }
 \examples{
 file <- system.file("extdata",

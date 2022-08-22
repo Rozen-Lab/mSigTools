@@ -1,13 +1,12 @@
-#' Find an optimal matching between two sets of signatures subject to a maximum distance
+#' Find an optimal matching between two sets of signatures subject to a maximum distance.
 #'
 #' @param x1 A numerical-matrix-like object with columns as signatures.
 #'
 #' @param x2 A numerical-matrix-like object with columns as signatures.
 #'   Needs to have the same number of rows as \code{x1}.
 #'
-#' @param method A character string that specifies a method for
-#'   \code{\link[philentropy]{distance}}.
-#'
+#' @param method As for the \code{\link[philentropy]{distance}} function in package
+#'   \code{philenropy}.
 #'
 #' @param convert.sim.to.dist If \code{method} specifies a similarity
 #'   rather than a distance, use this function to convert the

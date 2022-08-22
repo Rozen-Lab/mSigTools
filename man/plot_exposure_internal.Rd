@@ -2,7 +2,7 @@
 % Please edit documentation in R/exposure_related_functions.R
 \name{plot_exposure_internal}
 \alias{plot_exposure_internal}
-\title{Plot a single exposure plot}
+\title{Plot a matrix of exposures in a single plot.}
 \usage{
 plot_exposure_internal(
   exposure,
@@ -64,6 +64,6 @@ An \strong{invisible} list whose first element is a logic value
   adding to the graph.
 }
 \description{
-Plot a single exposure plot
+Plot a matrix of exposures in a single plot.
 }
 \keyword{internal}

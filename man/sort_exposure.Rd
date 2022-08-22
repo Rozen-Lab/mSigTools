@@ -2,7 +2,7 @@
 % Please edit documentation in R/exposure_related_functions.R
 \name{sort_exposure}
 \alias{sort_exposure}
-\title{Sort columns of an exposure matrix from largest to smallest (or vice versa)}
+\title{Sort columns of an exposure matrix based on the number of mutations in each sample (column).}
 \usage{
 sort_exposure(exposure, decreasing = TRUE)
 }
@@ -17,7 +17,7 @@ signature names and column names are taken as the sample IDs.}
 The original \code{exposure} with columns sorted.
 }
 \description{
-Sort columns of an exposure matrix from largest to smallest (or vice versa)
+Sort columns of an exposure matrix based on the number of mutations in each sample (column).
 }
 \examples{
 file <- system.file("extdata",

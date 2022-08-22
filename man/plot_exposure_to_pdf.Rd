@@ -2,7 +2,8 @@
 % Please edit documentation in R/exposure_related_functions.R
 \name{plot_exposure_to_pdf}
 \alias{plot_exposure_to_pdf}
-\title{Plot exposures in multiple plots each with a manageable number of samples to PDF}
+\title{Plot exposures in multiple plots to a single PDF file, with each plot showing
+exposures for a manageable number of samples.}
 \usage{
 plot_exposure_to_pdf(
   exposure,
@@ -88,7 +89,8 @@ An \strong{invisible} list whose first element is a logic value
   adding to the graph.
 }
 \description{
-Plot exposures in multiple plots each with a manageable number of samples to PDF
+Plot exposures in multiple plots to a single PDF file, with each plot showing
+exposures for a manageable number of samples.
 }
 \examples{
 file <- system.file("extdata",
