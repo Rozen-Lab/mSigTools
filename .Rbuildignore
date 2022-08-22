@@ -4,5 +4,5 @@
 ^README\.Rmd$
 ^LICENSE\.md$
 ^data-raw$
-^mSigTools_*.pdf$
+^mSigTools_.*\.pdf$
 ^cran-comments\.md$
