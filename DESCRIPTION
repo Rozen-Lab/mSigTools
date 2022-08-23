@@ -1,7 +1,7 @@
 Package: mSigTools
 Type: Package
 Title: Mutational Signature Analysis Tools
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: 
     c(person(given = "Steven",
              family = "Rozen",
@@ -12,14 +12,16 @@ Authors@R:
              family = "Jiang",
              role = "aut",
              comment = c(ORCID = "0000-0003-4974-2753")))
-Description: mSigTools ("mutational signature analysis tools") provides
-             utility functions for mutational signature analysis. This
-             package provides two groups of functions. One is for
+Description: Utility functions for mutational signature analysis.
+             This package provides two groups of functions. One is for
              dealing with mutational signature "exposures" (i.e. the
              counts of mutations in a sample that are
              due to each mutational signature). The other group of
-             functions is for comparing two lists of mutational
-             signatures.
+             functions is for matching two lists of mutational
+             signatures. This match minimizes the total cosine distance
+             by using the "Hungarian algorithm" described in : 
+             Kuhn, H. W. (1955) <doi:10.1002/nav.3800020109>.
+             'mSigTools' stands for mutational Signature analysis Tools. 
 License: GPL-3
 URL: https://github.com/Rozen-Lab/mSigTools
 BugReports: https://github.com/Rozen-Lab/mSigTools/issues
