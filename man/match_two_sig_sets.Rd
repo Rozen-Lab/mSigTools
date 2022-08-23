@@ -41,11 +41,11 @@ Match signatures between \code{x1} and \code{x2}
    \url{https://en.wikipedia.org/wiki/Hungarian_algorithm},
    which optimizes the total cost associated with the links
    between nodes.
-   The functions converts similarities to distances,
-   and generates a distance matrix between the two
-   sets of signatures.
-   It sets distances > \code{cutoff} to very large values.
-   It then applies \code{\link[clue]{solve_LSAP}} to the resulting
+   This function generates a distance matrix between the two
+   sets of signatures using \code{method} and, if necessary,
+   \code{convert.sim.to.dist}.
+   It then sets distances > \code{cutoff} to very large values and
+   then applies \code{\link[clue]{solve_LSAP}} to the resulting
    matrix to compute a matching between
    \code{x1} and \code{x2} that minimizes the sum of the
    distances.
