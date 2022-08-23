@@ -2,7 +2,7 @@
 % Please edit documentation in R/exposure_related_functions.R
 \name{write_exposure}
 \alias{write_exposure}
-\title{Write an exposure matrix to a file}
+\title{Write an exposure matrix to a file.}
 \usage{
 write_exposure(exposure, file, row.names = TRUE)
 }
@@ -18,7 +18,7 @@ signature names and column names are taken as the sample IDs.}
 character vector of row names to be written.}
 }
 \description{
-Write an exposure matrix to a file
+Write an exposure matrix to a file.
 }
 \examples{
 file <- system.file("extdata",

@@ -40,7 +40,7 @@ read_exposure <- function(file, check.names = FALSE) {
   return(data.matrix(retval))
 }
 
-#' @title Write an exposure matrix to a file
+#' @title Write an exposure matrix to a file.
 #'
 #' @param exposure Exposures as a numerical matrix (or data.frame) with
 #'   signatures in rows and samples in columns. Rownames are taken as the

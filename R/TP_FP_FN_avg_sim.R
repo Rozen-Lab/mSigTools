@@ -1,5 +1,5 @@
 #' Find best matches (by cosine similarity) of a set of mutational signatures to
-#' a set of reference mutational signatures
+#' a set of reference mutational signatures.
 #'
 #' @details Match signatures in \code{extracted.sigs} to
 #'    signatures in \code{reference.sigs} using \code{\link{match_two_sig_sets}}

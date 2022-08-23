@@ -3,7 +3,7 @@
 \name{TP_FP_FN_avg_sim}
 \alias{TP_FP_FN_avg_sim}
 \title{Find best matches (by cosine similarity) of a set of mutational signatures to
-a set of reference mutational signatures}
+a set of reference mutational signatures.}
 \usage{
 TP_FP_FN_avg_sim(extracted.sigs, reference.sigs, similarity.cutoff = 0.9)
 }
@@ -49,7 +49,7 @@ extracted signature.
 }
 \description{
 Find best matches (by cosine similarity) of a set of mutational signatures to
-a set of reference mutational signatures
+a set of reference mutational signatures.
 }
 \details{
 Match signatures in \code{extracted.sigs} to
