@@ -17,10 +17,10 @@ Description: Utility functions for mutational signature analysis.
              dealing with mutational signature "exposures" (i.e. the
              counts of mutations in a sample that are
              due to each mutational signature). The other group of
-             functions is for matching two lists of mutational
-             signatures. This match minimizes the total cosine distance
-             by using the "Hungarian algorithm" described in : 
-             Kuhn, H. W. (1955) <doi:10.1002/nav.3800020109>.
+             functions is for matching two sets of mutational
+             signatures. The match minimizes the total distance
+             between paired signatures by using the "Hungarian 
+             algorithm" (Kuhn, 1955; <doi:10.1002/nav.3800020109>).
              'mSigTools' stands for mutational Signature analysis Tools. 
 License: GPL-3
 URL: https://github.com/Rozen-Lab/mSigTools
