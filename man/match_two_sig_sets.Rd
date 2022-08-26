@@ -34,10 +34,13 @@ pair signatures between \code{x1} and \code{x2}.}
 A list with the elements
 \itemize{
 \item \code{table} Table of extracted signatures that matched a reference
-signature. Each row contains the extracted signature name, the reference
+signature. Each row contains the extracted signature name,
+the reference
 signature name, and the distance of the match.
-\item \code{orig.matrix} The distance matrix between \code{x1} and \code{x2}.
-\item \code{modified.matrix} The \code{orig.matrix} with distances >
+\item \code{orig.matrix} The matrix of numeric distances between
+\code{x1} and \code{x2}.
+\item \code{modified.matrix} The argument \code{orig.matrix}
+with distances >
 \code{cutoff} changed to very large values.
 }
 }

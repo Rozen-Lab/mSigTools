@@ -21,7 +21,7 @@ if double colons were present.}
 }
 \value{
 Numerical matrix of exposures, with the same
- shape as \code{file}.
+ shape as the contents of \code{file}.
 }
 \description{
 Read an exposure matrix from a file.

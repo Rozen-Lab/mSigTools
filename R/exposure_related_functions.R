@@ -13,7 +13,7 @@
 #' if double colons were present.
 #'
 #' @return Numerical matrix of exposures, with the same
-#'  shape as \code{file}.
+#'  shape as the contents of \code{file}.
 #'
 #' @importFrom utils read.csv
 #'
@@ -139,9 +139,13 @@ sort_exposure <- function(exposure, decreasing = TRUE) {
 #'
 #' @import graphics
 #'
-#' @return An \strong{invisible} list whose first element is a logic value
-#'   indicating whether the plot is successful. The second element is a numeric
-#'   vector giving the coordinates of all the bar midpoints drawn, useful for
+#' @return An \strong{invisible} list.
+#'   The first element
+#'   is a logical value
+#'   indicating whether the plot was successful.
+#'   The second element is a numeric
+#'   vector giving the coordinates of
+#'   the bar x-axis midpoints drawn, useful for
 #'   adding to the graph.
 #'
 #' @keywords internal
@@ -362,9 +366,12 @@ plot_exposure_internal <-
 #' @param legend.x,legend.y The x and y co-ordinates to be used to position the
 #'   legend.
 #'
-#' @return An \strong{invisible} list whose first element is a logic value
-#'   indicating whether the plot is successful. The second element is a numeric
-#'   vector giving the coordinates of all the bar midpoints drawn, useful for
+#' @return An \strong{invisible} list.
+#'   The first element is a logical value
+#'   indicating whether the plot is successful.
+#'   The second element is a numeric
+#'   vector giving the coordinates of
+#'   the bar x-axis midpoints drawn, useful for
 #'   adding to the graph.
 #'
 #' @export
@@ -464,9 +471,12 @@ plot_exposure <- function(exposure,
 #'
 #' @param width,height The width and height of the graphics region in inches.
 #'
-#' @return An \strong{invisible} list whose first element is a logic value
-#'   indicating whether the plot is successful. The second element is a numeric
-#'   vector giving the coordinates of all the bar midpoints drawn, useful for
+#' @return An \strong{invisible} list.
+#'   The first element is a logical value
+#'   indicating whether the plot is successful.
+#'   The second element is a numeric
+#'   vector giving the coordinates of
+#'   the bar x-axis midpoints drawn, useful for
 #'   adding to the graph.
 #'
 #' @export

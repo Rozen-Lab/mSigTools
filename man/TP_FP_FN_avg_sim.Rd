@@ -30,15 +30,17 @@ A list with the elements
 \item \code{TP} The number of true positive extracted signatures.
 \item \code{FP} The number of false positive extracted signatures.
 \item \code{FN} The number of false negative reference signatures.
-\item \code{avg.cos.sim} Average cosine similarity of
+\item \code{avg.cos.sim} The average cosine similarity of
 true positives to their matching reference signatures.
-\item \code{table} Table of extracted signatures
+\item \code{table} A data.frame of extracted signatures
 that matched a reference signature.
 Each row contains the extracted signature name,
 the reference signature name, and the
 cosine similarity of the match.
-\item \code{sim.matrix} The similarity matrix corresponding
-to the input signatures.
+\item \code{sim.matrix} The numeric distance or similarity
+matrix between \code{extracted.sigs} and
+\code{reference.sigs} as returned from
+\code{\link{sig_dist_matrix}}.
 \item \code{unmatched.ex.sigs} The identifiers of
 the extracted signatures that did not match a
 reference signature.

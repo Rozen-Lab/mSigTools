@@ -58,9 +58,13 @@ Default is TRUE.}
 do something reasonable.}
 }
 \value{
-An \strong{invisible} list whose first element is a logic value
-  indicating whether the plot is successful. The second element is a numeric
-  vector giving the coordinates of all the bar midpoints drawn, useful for
+An \strong{invisible} list.
+  The first element
+  is a logical value
+  indicating whether the plot was successful.
+  The second element is a numeric
+  vector giving the coordinates of
+  the bar x-axis midpoints drawn, useful for
   adding to the graph.
 }
 \description{

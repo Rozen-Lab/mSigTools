@@ -31,17 +31,19 @@
 #'
 #' * \code{FN} The number of false negative reference signatures.
 #'
-#' * \code{avg.cos.sim} Average cosine similarity of
+#' * \code{avg.cos.sim} The average cosine similarity of
 #'     true positives to their matching reference signatures.
 #'
-#' * \code{table} Table of extracted signatures
+#' * \code{table} A data.frame of extracted signatures
 #'     that matched a reference signature.
 #'     Each row contains the extracted signature name,
 #'     the reference signature name, and the
 #'     cosine similarity of the match.
 #'
-#' * \code{sim.matrix} The similarity matrix corresponding
-#'     to the input signatures.
+#' * \code{sim.matrix} The numeric distance or similarity
+#'     matrix between \code{extracted.sigs} and
+#'     \code{reference.sigs} as returned from
+#'     \code{\link{sig_dist_matrix}}.
 #'
 #' * \code{unmatched.ex.sigs} The identifiers of
 #'     the extracted signatures that did not match a

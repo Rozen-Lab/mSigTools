@@ -34,12 +34,15 @@
 #' @return A list with the elements
 #'
 #' * \code{table} Table of extracted signatures that matched a reference
-#'    signature. Each row contains the extracted signature name, the reference
+#'    signature. Each row contains the extracted signature name,
+#'    the reference
 #'    signature name, and the distance of the match.
 #'
-#' * \code{orig.matrix} The distance matrix between \code{x1} and \code{x2}.
+#' * \code{orig.matrix} The matrix of numeric distances between
+#'     \code{x1} and \code{x2}.
 #'
-#' * \code{modified.matrix} The \code{orig.matrix} with distances >
+#' * \code{modified.matrix} The argument \code{orig.matrix}
+#'    with distances >
 #'    \code{cutoff} changed to very large values.
 #'
 #' @export

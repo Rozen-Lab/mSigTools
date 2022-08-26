@@ -9,9 +9,11 @@
 #' @param method As for the \code{\link[philentropy]{distance}} function in package
 #'   \code{philenropy}.
 #'
-#' @return A matrix with dimensions \code{ncol(x1)} X \code{ncol(x2)} with
-#'   each element representing the distance or similarity (depending on \code{method})
-#'   between the column in \code{x1} and a column in \code{x2}.
+#' @return A numeric matrix with dimensions
+#'   \code{ncol(x1)} X \code{ncol(x2)}.
+#'   Each element represents the distance or
+#'   similarity (depending on \code{method})
+#'   between a column in \code{x1} and a column in \code{x2}.
 #'
 #' @export
 #'

@@ -17,9 +17,11 @@ and must have the same number of rows as \code{x1}.}
 \code{philenropy}.}
 }
 \value{
-A matrix with dimensions \code{ncol(x1)} X \code{ncol(x2)} with
-  each element representing the distance or similarity (depending on \code{method})
-  between the column in \code{x1} and a column in \code{x2}.
+A numeric matrix with dimensions
+  \code{ncol(x1)} X \code{ncol(x2)}.
+  Each element represents the distance or
+  similarity (depending on \code{method})
+  between a column in \code{x1} and a column in \code{x2}.
 }
 \description{
 Compute a matrix of distances / similarities between two sets of signatures.
