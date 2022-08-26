@@ -52,6 +52,8 @@ read_exposure <- function(file, check.names = FALSE) {
 #'   \code{exposure} are to be written along with \code{exposure}, or a
 #'   character vector of row names to be written.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @importFrom utils write.csv
 #'
 #' @export

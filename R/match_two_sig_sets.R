@@ -31,14 +31,27 @@
 #'    \code{x1} and \code{x2} that minimizes the sum of the
 #'    distances.
 #'
+#' @return A list with the elements
+#'
+#' * \code{table} Table of extracted signatures that matched a reference
+#'    signature. Each row contains the extracted signature name, the reference
+#'    signature name, and the distance of the match.
+#'
+#' * \code{orig.matrix} The distance matrix between \code{x1} and \code{x2}.
+#'
+#' * \code{modified.matrix} The \code{orig.matrix} with distances >
+#'    \code{cutoff} changed to very large values.
+#'
 #' @export
+#'
+#' @md
 #'
 #' @examples
 #' ex.sigs <- matrix(c(0.2, 0.8, 0.3, 0.7, 0.6, 0.4), nrow = 2)
 #' colnames(ex.sigs) <- c("ex1", "ex2", "ex3")
-#' gt.sigs <- matrix(c(0.21, 0.79, 0.19, 0.81), nrow = 2)
-#' colnames(gt.sigs) <- c("gt1", "gt2")
-#' match_two_sig_sets(ex.sigs, gt.sigs, cutoff = .9)
+#' ref.sigs <- matrix(c(0.21, 0.79, 0.19, 0.81), nrow = 2)
+#' colnames(ref.sigs) <- c("ref1", "ref2")
+#' match_two_sig_sets(ex.sigs, ref.sigs, cutoff = .9)
 #'
 match_two_sig_sets <-
   function(x1,

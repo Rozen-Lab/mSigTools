@@ -30,31 +30,42 @@ similarity to a distance.}
 \item{cutoff}{A maximum distance or minimum similarity over which to
 pair signatures between \code{x1} and \code{x2}.}
 }
+\value{
+A list with the elements
+\itemize{
+\item \code{table} Table of extracted signatures that matched a reference
+signature. Each row contains the extracted signature name, the reference
+signature name, and the distance of the match.
+\item \code{orig.matrix} The distance matrix between \code{x1} and \code{x2}.
+\item \code{modified.matrix} The \code{orig.matrix} with distances >
+\code{cutoff} changed to very large values.
+}
+}
 \description{
 Find an optimal matching between two sets of signatures subject to a maximum distance.
 }
 \details{
 Match signatures between \code{x1} and \code{x2}
-    using the function
-   \code{\link[clue]{solve_LSAP}}, which uses the
-   "Hungarian" (a.k.a "Kuhn–Munkres") algorithm
-   \url{https://en.wikipedia.org/wiki/Hungarian_algorithm},
-   which optimizes the total cost associated with the links
-   between nodes.
-   This function generates a distance matrix between the two
-   sets of signatures using \code{method} and, if necessary,
-   \code{convert.sim.to.dist}.
-   It then sets distances > \code{cutoff} to very large values and
-   then applies \code{\link[clue]{solve_LSAP}} to the resulting
-   matrix to compute a matching between
-   \code{x1} and \code{x2} that minimizes the sum of the
-   distances.
+using the function
+\code{\link[clue]{solve_LSAP}}, which uses the
+"Hungarian" (a.k.a "Kuhn–Munkres") algorithm
+\url{https://en.wikipedia.org/wiki/Hungarian_algorithm},
+which optimizes the total cost associated with the links
+between nodes.
+This function generates a distance matrix between the two
+sets of signatures using \code{method} and, if necessary,
+\code{convert.sim.to.dist}.
+It then sets distances > \code{cutoff} to very large values and
+then applies \code{\link[clue]{solve_LSAP}} to the resulting
+matrix to compute a matching between
+\code{x1} and \code{x2} that minimizes the sum of the
+distances.
 }
 \examples{
 ex.sigs <- matrix(c(0.2, 0.8, 0.3, 0.7, 0.6, 0.4), nrow = 2)
 colnames(ex.sigs) <- c("ex1", "ex2", "ex3")
-gt.sigs <- matrix(c(0.21, 0.79, 0.19, 0.81), nrow = 2)
-colnames(gt.sigs) <- c("gt1", "gt2")
-match_two_sig_sets(ex.sigs, gt.sigs, cutoff = .9)
+ref.sigs <- matrix(c(0.21, 0.79, 0.19, 0.81), nrow = 2)
+colnames(ref.sigs) <- c("ref1", "ref2")
+match_two_sig_sets(ex.sigs, ref.sigs, cutoff = .9)
 
 }

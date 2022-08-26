@@ -36,7 +36,7 @@ true positives to their matching reference signatures.
 that matched a reference signature.
 Each row contains the extracted signature name,
 the reference signature name, and the
-cosine similarity of the match. The
+cosine similarity of the match.
 \item \code{sim.matrix} The similarity matrix corresponding
 to the input signatures.
 \item \code{unmatched.ex.sigs} The identifiers of

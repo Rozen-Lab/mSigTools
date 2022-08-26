@@ -17,6 +17,9 @@ signature names and column names are taken as the sample IDs.}
 \code{exposure} are to be written along with \code{exposure}, or a
 character vector of row names to be written.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Write an exposure matrix to a file.
 }

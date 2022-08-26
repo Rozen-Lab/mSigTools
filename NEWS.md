@@ -1,3 +1,7 @@
+# mSigTools 1.0.3
+* Added return value for exported functions `match_two_sig_sets` and
+`write_exposure`.
+
 # mSigTools 1.0.2
 * Added reference for "Hungarian algorithm" in package DESCRIPTION.
 
