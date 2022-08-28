@@ -1,7 +1,7 @@
 Package: mSigTools
 Type: Package
 Title: Mutational Signature Analysis Tools
-Version: 1.0.3
+Version: 1.0.4
 Authors@R: 
     c(person(given = "Steven",
              family = "Rozen",

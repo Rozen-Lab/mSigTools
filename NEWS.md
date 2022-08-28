@@ -1,3 +1,6 @@
+# mSigTools 1.0.4
+* Fixed test in test_exposure_related_functions.R.
+
 # mSigTools 1.0.3
 * Added return value for exported functions `match_two_sig_sets` and
 `write_exposure`.
