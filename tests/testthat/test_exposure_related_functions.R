@@ -17,7 +17,7 @@ test_that("Read and write exposure", {
 
 test_that("plot_exposure_internal function", {
   exposure <- read_exposure("testdata/synthetic.exposure.csv")
-  par(mar = c(3.9, 3.9, 1, 1))
+  old.par <- par(mar = c(3.9, 3.9, 1, 1))
   out <-
     plot_exposure_internal(sort_exposure(exposure),
       xlim = c(0, ncol(exposure) * 2.5),
@@ -76,6 +76,7 @@ test_that("plot_exposure_internal function", {
   expect_equal(out6$plot.success, TRUE)
 
   graphics.off()
+  par(old.par)
 })
 
 test_that("plot_exposure function", {
@@ -114,7 +115,6 @@ test_that("plot_exposure function", {
   expect_equal(out3$plot.success, TRUE)
 
   # Plot exposure proportions rather than counts
-  par(mfcol = c(2, 1), mar = c(2, 3.9, 1.9, 0), oma = c(2, 0, 0, 0))
   out4 <- plot_exposure(
     exposure = sort_exposure(exposure[, 1:43]),
     plot.proportion = TRUE, cex.legend = 0.2

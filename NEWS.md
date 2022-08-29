@@ -1,3 +1,6 @@
+# mSigTools 1.0.5
+* Updated test functions in tests/testthat/ folder.
+
 # mSigTools 1.0.4
 * Fixed test in test_exposure_related_functions.R.
 
