@@ -1,4 +1,4 @@
-# mSigTools 1.0.5
+# mSigTools 1.0.5 (submitted to CRAN)
 * Updated test functions in tests/testthat/ folder.
 
 # mSigTools 1.0.4
