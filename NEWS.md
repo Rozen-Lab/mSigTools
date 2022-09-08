@@ -1,3 +1,7 @@
+# mSigTools 1.0.6 
+* Fixed a bug in function `sig_dist_matrix` when in some very rare cases, some
+cosine similarities can be slightly greater than 1.
+
 # mSigTools 1.0.5 (submitted to CRAN)
 * Updated test functions in tests/testthat/ folder.
 
