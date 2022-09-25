@@ -2,6 +2,7 @@
 
 export(TP_FP_FN_avg_sim)
 export(match_two_sig_sets)
+export(optimize_exposure_QP)
 export(plot_exposure)
 export(plot_exposure_to_pdf)
 export(read_exposure)

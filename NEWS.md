@@ -1,3 +1,6 @@
+# mSigTools 1.0.4
+# Added function `optimize_exposure_QP`.
+
 # mSigTools 1.0.3
 * Added return value for exported functions `match_two_sig_sets` and
 `write_exposure`.
