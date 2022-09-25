@@ -38,6 +38,6 @@ sig_dist_matrix <- function(x1, x2, method = "cosine") {
   }
 
   dd2 <- dd[1:ncol(x1), , drop = FALSE] # Use the rows that represent the elements of x1
-  dd3 <- dd2[, -(1:ncol(x1)), drop = FALSE] # Use that columns that represent elements of x2
+  dd3 <- dd2[, -(1:ncol(x1)), drop = FALSE] # Use the columns that represent elements of x2
   return(dd3)
 }
