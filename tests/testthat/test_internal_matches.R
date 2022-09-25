@@ -4,7 +4,7 @@ test_that("test internal_matches", {
     nrow = 2
   )
   rownames(tmp.dd) <- c("x1", "x2")
-  colnames(tmp.dd) <- c("g1", "g2")
+  colnames(tmp.dd) <- c("ref1", "ref2")
   tmp.dd <- 1 - tmp.dd
   rr <- internal_matches(tmp.dd, cutoff = 0.1)
   expect_equal(
@@ -12,7 +12,7 @@ test_that("test internal_matches", {
     list(
       table = structure(
         list(
-          x1 = c("x1", "x2"), x2 = c("g1", "g2"),
+          x1 = c("x1", "x2"), x2 = c("ref1", "ref2"),
           dist = c(0.01, 0.09)
         ),
         row.names = 1:2, class = "data.frame"
@@ -20,12 +20,12 @@ test_that("test internal_matches", {
       orig.matrix =
         structure(c(0.01, 0.05, 0.11, 0.09),
           .Dim = c(2L, 2L),
-          .Dimnames = list(c("x1", "x2"), c("g1", "g2"))
+          .Dimnames = list(c("x1", "x2"), c("ref1", "ref2"))
         ),
       modified.matrix =
         structure(c(0.01, 0.05, 9e+99, 0.09),
           .Dim = c(2L, 2L),
-          .Dimnames = list(c("x1", "x2"), c("g1", "g2"))
+          .Dimnames = list(c("x1", "x2"), c("ref1", "ref2"))
         )
     )
   )

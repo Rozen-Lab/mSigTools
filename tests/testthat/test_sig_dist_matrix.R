@@ -1,9 +1,9 @@
 test_that("test sig_dist_matrix", {
   ex.sigs <- matrix(c(0.2, 0.8, 0.3, 0.7), nrow = 2)
   colnames(ex.sigs) <- c("ex1", "ex2")
-  gt.sigs <- matrix(c(0.21, 0.79, 0.19, 0.81), nrow = 2)
-  colnames(gt.sigs) <- c("gt1", "gt2")
-  rr <- sig_dist_matrix(ex.sigs, gt.sigs)
+  ref.sigs <- matrix(c(0.21, 0.79, 0.19, 0.81), nrow = 2)
+  colnames(ref.sigs) <- c("ref1", "ref2")
+  rr <- sig_dist_matrix(ex.sigs, ref.sigs)
   expect_equal(
     rr,
     structure(c(
@@ -13,11 +13,11 @@ test_that("test sig_dist_matrix", {
       0.98481531879193
     ),
     .Dim = c(2L, 2L),
-    .Dimnames = list(c("ex1", "ex2"), c("gt1", "gt2"))
+    .Dimnames = list(c("ex1", "ex2"), c("ref1", "ref2"))
     )
   )
   ex.sigs2 <- cbind(ex.sigs, ex3 = c(0.18, 0.82))
-  rr <- sig_dist_matrix(ex.sigs2, gt.sigs)
+  rr <- sig_dist_matrix(ex.sigs2, ref.sigs)
   testthat::expect_equal(
     rr,
     structure(c(
@@ -29,7 +29,7 @@ test_that("test sig_dist_matrix", {
       0.999897506866566
     ),
     .Dim = 3:2,
-    .Dimnames = list(c("ex1", "ex2", "ex3"), c("gt1", "gt2"))
+    .Dimnames = list(c("ex1", "ex2", "ex3"), c("ref1", "ref2"))
     )
   )
 })

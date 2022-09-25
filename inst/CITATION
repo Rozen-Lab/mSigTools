@@ -2,11 +2,11 @@ citHeader("To cite mSigTools in publications use:")
 
 citEntry(
   entry    = "Manual",
-  title    = "mSigTools: Mutational Signature analysis Tools)",
+  title    = "mSigTools: Mutational Signature analysis Tools",
   author   = c(person("Steven", "Rozen"),
                person("Nanhai", "Jiang")),
   year     = "2022",
-  note     = "R package version 1.0.2",
+  note     = "R package version 1.0.5",
   textVersion = paste0("Rozen SG, Jiang NH (2022). ",
-  "mSigTools: Mutational Signature analysis Tools. ", "R package version 1.0.2.")
+  "mSigTools: Mutational Signature analysis Tools. ", "R package version 1.0.5.")
 )

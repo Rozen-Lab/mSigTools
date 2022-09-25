@@ -1,5 +1,12 @@
+# mSigTools 1.0.6
+* Added function `optimize_exposure_QP`.
+* Adding `best_reconstruction_QP` (not done yet)
+
+# mSigTools 1.0.5 (submitted to CRAN)
+* Updated test functions in tests/testthat/ folder.
+
 # mSigTools 1.0.4
-# Added function `optimize_exposure_QP`.
+* Fixed test in test_exposure_related_functions.R.
 
 # mSigTools 1.0.3
 * Added return value for exported functions `match_two_sig_sets` and

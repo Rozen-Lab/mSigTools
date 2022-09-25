@@ -17,7 +17,7 @@ test_that("Read and write exposure", {
 
 test_that("plot_exposure_internal function", {
   exposure <- read_exposure("testdata/synthetic.exposure.csv")
-  par(mar = c(3.9, 3.9, 1, 1))
+  old.par <- par(mar = c(3.9, 3.9, 1, 1))
   out <-
     plot_exposure_internal(sort_exposure(exposure),
       xlim = c(0, ncol(exposure) * 2.5),
@@ -76,14 +76,14 @@ test_that("plot_exposure_internal function", {
   expect_equal(out6$plot.success, TRUE)
 
   graphics.off()
+  par(old.par)
 })
 
 test_that("plot_exposure function", {
   exposure <- read_exposure("testdata/synthetic.exposure.csv")
 
   old.par <-
-    par(mfcol = c(2, 1), mar = c(2, 3.9, 3.9, 2), oma = c(2, 0, 0, 0))
-  on.exit(par(old.par))
+    par(mfcol = c(2, 1), mar = c(2.2, 3.9, 2, 1), oma = c(2, 0, 0, 0))
   out <- plot_exposure(
     exposure = sort_exposure(exposure[, 1:43]),
     main = "test", cex.main = 0.8, cex.legend = 0.3,
@@ -92,7 +92,6 @@ test_that("plot_exposure function", {
   expect_equal(out$plot.success, TRUE)
 
   # Only plot the first 30 samples
-  par(old.par)
   out1 <- plot_exposure(
     exposure = sort_exposure(exposure[, 1:30]), # Test a trick edge case
     main = "test1", cex.main = 0.8, cex.legend = 0.45
@@ -116,14 +115,11 @@ test_that("plot_exposure function", {
   expect_equal(out3$plot.success, TRUE)
 
   # Plot exposure proportions rather than counts
-  par(mfcol = c(2, 1), mar = c(2, 3.9, 1.9, 0), oma = c(2, 0, 0, 0))
   out4 <- plot_exposure(
     exposure = sort_exposure(exposure[, 1:43]),
     plot.proportion = TRUE, cex.legend = 0.2
   )
   expect_equal(out4$plot.success, TRUE)
-
-  par(old.par)
 
   # Only plot selected samples with selected signatures
   out5 <- plot_exposure(
@@ -155,6 +151,8 @@ test_that("plot_exposure function", {
     )
   expect_equal(out7$plot.success, TRUE)
   graphics.off()
+
+  par(old.par)
 })
 
 test_that("plot_exposure_to_pdf function", {
