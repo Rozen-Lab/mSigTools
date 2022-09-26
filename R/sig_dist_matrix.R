@@ -29,7 +29,15 @@ sig_dist_matrix <- function(x1, x2, method = "cosine") {
   dd <- suppressMessages(
     philentropy::distance(t(mm), method = method, use.row.names = TRUE)
   )
+
+  # In some very rare cases, some cosine similarities in dd may be slightly
+  # greater than 1 e.g. 1.00000000000000022204460492503130808472633361816406250
+  # To avoid error later, we change those values to 1
+  if (method == "cosine") {
+    dd[dd > 1] <- 1
+  }
+
   dd2 <- dd[1:ncol(x1), , drop = FALSE] # Use the rows that represent the elements of x1
-  dd3 <- dd2[, -(1:ncol(x1)), drop = FALSE] # Use that columns that represent elements of x2
+  dd3 <- dd2[, -(1:ncol(x1)), drop = FALSE] # Use the columns that represent elements of x2
   return(dd3)
 }
