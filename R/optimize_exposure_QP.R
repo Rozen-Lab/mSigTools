@@ -9,7 +9,8 @@
 #'   vector because the column names are needed.
 #'
 #' @details
-#' Code adapted from \code{SignatureEstimation::decomposeQP}.
+#' Code adapted from \code{SignatureEstimation::decomposeQP} and
+#' uses \code{\link[quadprog]{solve.QP}}.
 #'
 #' @export
 #'

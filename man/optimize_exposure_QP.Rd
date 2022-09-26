@@ -23,7 +23,8 @@ A vector of exposures with names being the colnames from
 Quadratic programming optimization of signature activities
 }
 \details{
-Code adapted from \code{SignatureEstimation::decomposeQP}.
+Code adapted from \code{SignatureEstimation::decomposeQP} and
+uses \code{\link[quadprog]{solve.QP}}.
 }
 \examples{
 usigs <- matrix(c(0.2, 0.7, 0.1,
