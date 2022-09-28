@@ -79,9 +79,13 @@ best_reconstruction_QP <- function(target.sig,
                                    method          = "cosine",
                                    trim.less.than  = 1e-10) {
 
-  if (!isTRUE(all.equal(colSums(sig.universe), rep(1, ncol(sig.universe))))) {
+  if (!isTRUE(
+    all.equal.numeric(colSums(sig.universe),
+                      rep(1, ncol(sig.universe)),
+                      check.attributes = FALSE)
+    )) {
     return(list(optimized.exposure = numeric(),
-           method = "Error: all signature.universe columns must sum to 0"))
+                method = "Error: all signature.universe columns must sum to 0"))
   }
 
   if (is.null(colnames(sig.universe))) {
