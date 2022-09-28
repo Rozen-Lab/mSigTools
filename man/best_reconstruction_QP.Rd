@@ -19,7 +19,9 @@ a non-negative numeric vector or 1-column matrix-like object.}
 \item{sig.universe}{The universe of signatures from which to reconstruct
 \code{target.sig}; a non-negative numeric matrix-like object with
 \code{nrow(sig.universe) == length(target.sig)}. The sums of each column
-must be 1.}
+must be 1. Must not contain duplicate columns or have other
+non-unique quadratic programming solutions (not checked, but will generate
+an error from \code{\link[quadprog]{solve.QP}} in package \code{quadprog}).}
 
 \item{max.subset.size}{Maximum number of signatures to use to
 reconstruct \code{target.sig}.}
@@ -54,15 +56,17 @@ or an error message if \code{optimize.exposure} is empty.
 Find "best" reconstruction of a target signature or spectrum from a set of signatures.
 }
 \details{
-Should normally be fast if you do not specify \code{max.subset.size},
-but will be combinatorially slow if \code{max.subset.size} is large
+This function should be fast if you do not specify \code{max.subset.size},
+but it will be combinatorially slow if \code{max.subset.size} is large
 and \code{trim.less.than} is small or negative. So do not do that.
-If \code{max.subset.size} is \code{NULL}, then just use \verb{\link{optimize_exposure_QP`}. then exclude exposures < }trim.less.than\verb{, then re-run }\link{optimize_exposure_QP`}. Otherwise, after excluding
-exposures < \code{trim.less.than}, take all subsets of the signatures
-with the remaining exposures and run \code{optimize_exposure_QP} on each
-subset of size < \code{max.subset.size}, remove exposures < \code{trim.less.than},
-rerun \verb{\link{optimize_exposure_Q}}, calculate the reconstruction and
-similarity between the reconstruction and the \code{target.sig}.
+If \code{max.subset.size} is \code{NULL}, then the function just uses \code{\link{optimize_exposure_QP}}.
+and then excludes exposures < \code{trim.less.than}, and then re-runs
+\code{\link{optimize_exposure_QP}}. Otherwise, after excluding
+exposures < \code{trim.less.than}, then the function runs \code{\link{optimize_exposure_QP}} on
+subsets of signatures of size <= \code{max.subset.size}, removes exposures < \code{trim.less.than},
+reruns \code{\link{optimize_exposure_QP}}, calculates the reconstruction and
+similarity between the reconstruction and the \code{target.sig} and returns the information for
+the exposures that have the greatest similarity.
 }
 \examples{
 set.seed(888)

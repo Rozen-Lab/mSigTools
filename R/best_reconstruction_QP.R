@@ -8,7 +8,7 @@
 #'   \code{nrow(sig.universe) == length(target.sig)}. The sums of each column
 #'   must be 1. Must not contain duplicate columns or have other
 #'   non-unique quadratic programming solutions (not checked, but will generate
-#'   an error from `\link[quadprog]{solve.QP}` in package `quadprog`).
+#'   an error from \code{\link[quadprog]{solve.QP}} in package `quadprog`).
 #'
 #' @param max.subset.size Maximum number of signatures to use to
 #'   reconstruct \code{target.sig}.
@@ -48,12 +48,12 @@
 #'   This function should be fast if you do not specify \code{max.subset.size},
 #'   but it will be combinatorially slow if \code{max.subset.size} is large
 #'   and \code{trim.less.than} is small or negative. So do not do that.
-#'   If `max.subset.size` is `NULL`, then the function just uses `\link{optimize_exposure_QP}`.
+#'   If `max.subset.size` is `NULL`, then the function just uses \code{\link{optimize_exposure_QP}}.
 #'   and then excludes exposures < `trim.less.than`, and then re-runs
-#'   `\link{optimize_exposure_QP}`. Otherwise, after excluding
-#'   exposures < `trim.less.than`, the `optimize_exposure_QP` on each
-#'   subset of signatures of size $le$ `max.subset.size`, removes exposures < `trim.less.than`,
-#'   reruns `\link{optimize_exposure_Q}`, calculates the reconstruction and
+#'   \code{\link{optimize_exposure_QP}}. Otherwise, after excluding
+#'   exposures < `trim.less.than`, then the function runs \code{\link{optimize_exposure_QP}} on
+#'   subsets of signatures of size <= `max.subset.size`, removes exposures < `trim.less.than`,
+#'   reruns \code{\link{optimize_exposure_QP}}, calculates the reconstruction and
 #'   similarity between the reconstruction and the `target.sig` and returns the information for
 #'   the exposures that have the greatest similarity.
 #'
