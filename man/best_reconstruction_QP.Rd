@@ -13,38 +13,62 @@ best_reconstruction_QP(
 )
 }
 \arguments{
-\item{target.sig}{The signature to reconstruct.}
+\item{target.sig}{The signature or spectrum to reconstruct;
+a non-negative numeric vector or 1-column matrix-like object.}
 
 \item{sig.universe}{The universe of signatures from which to reconstruct
-\code{target.sig}.}
+\code{target.sig}; a non-negative numeric matrix-like object with
+\code{nrow(sig.universe) == length(target.sig)}. The sums of each column
+must be 1.}
 
 \item{max.subset.size}{Maximum number of signatures to use to
 reconstruct \code{target.sig}.}
 
-\item{method}{As in \code{\link[philentropy]{dist_one_one}}, and used only
+\item{method}{As in \code{\link[philentropy]{dist_one_one}} in
+package \code{philentropy}, and used only
 to find the final "best" reconstruction. The optimized exposures from which
 to selected the "best" reconstruction are calculated using
-\code{\link{optimize_exposure_QP}}, which uses \code{\link[quadprog]{solve.QP}}.}
+\code{\link{optimize_exposure_QP}}, which uses \code{\link[quadprog]{solve.QP}}
+in package \code{quadprog}.}
 
 \item{trim.less.than}{After optimizing exposures with
 \code{\link{optimize_exposure_QP}}, remove exposures less than
 \code{trim.less.than} and then re-optimize.}
 }
 \value{
-A list .... TODO
+A list with elements:
+\itemize{
+\item \code{optimized.exposure} A numerical vector of the exposures that
+give the "best" reconstruction. This vector is empty if there is
+an error.
+\item \code{similarity} The similarity between the \code{reconstruction}
+(see below) and \code{target.sig} according to the distance
+or similarity provided by the \code{method} argument.
+\item \code{method} The value specified for the \code{method} argument,
+or an error message if \code{optimize.exposure} is empty.
+\item \code{reconstruction} The reconstruction of \code{target.sig} according to
+\code{optimized.exposure}.
+}
 }
 \description{
 Find "best" reconstruction of a target signature or spectrum from a set of signatures.
 }
 \details{
 Should normally be fast if you do not specify \code{max.subset.size},
-  but will be combinatorially slow if \code{max.subset.size} is large
-  and \code{trim.less.than} is small or negative. So do not do that.
-  TODO explain algorithm. TODO: tests
+but will be combinatorially slow if \code{max.subset.size} is large
+and \code{trim.less.than} is small or negative. So do not do that.
+If \code{max.subset.size} is \code{NULL}, then just use \verb{\link{optimize_exposure_QP`}. then exclude exposures < }trim.less.than\verb{, then re-run }\link{optimize_exposure_QP`}. Otherwise, after excluding
+exposures < \code{trim.less.than}, take all subsets of the signatures
+with the remaining exposures and run \code{optimize_exposure_QP} on each
+subset of size < \code{max.subset.size}, remove exposures < \code{trim.less.than},
+rerun \verb{\link{optimize_exposure_Q}}, calculate the reconstruction and
+similarity between the reconstruction and the \code{target.sig}.
 }
 \examples{
 set.seed(888)
-sig.u <- do.call(cbind, lapply(1:6, function(x) runif(n = 96)))
+  sig.u <-
+do.call(cbind,
+       lapply(1:6, function(x) { col <- runif(n = 96); col/sum(col) }))
 rr <- best_reconstruction_QP(target.sig = sig.u[ , 1, drop = FALSE],
                             sig.universe = sig.u[ , 2:6])
 names(rr)

@@ -10,11 +10,11 @@
 #'
 #' @details
 #' Code adapted from \code{SignatureEstimation::decomposeQP} and
-#' uses \code{\link[quadprog]{solve.QP}}.
+#' uses \code{\link[quadprog]{solve.QP}} in package \code{quadprog}.
 #'
 #' @export
 #'
-#' @return A vector of exposures with names being the colnames from
+#' @return A vector of exposures with names being the \code{colnames} from
 #'   \code{signatures}.
 #'
 #' @examples

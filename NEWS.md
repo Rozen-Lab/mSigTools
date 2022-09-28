@@ -1,6 +1,6 @@
 # mSigTools 1.0.6
 * Added function `optimize_exposure_QP`.
-* Adding `best_reconstruction_QP` (exported, but no tests yet)
+* Added `best_reconstruction_QP`
 * Fixed a bug in function `sig_dist_matrix` when in some very rare cases, some
   cosine similarities can be slightly greater than 1.
 
