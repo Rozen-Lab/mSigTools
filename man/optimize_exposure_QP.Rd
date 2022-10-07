@@ -16,14 +16,15 @@ signatures. Should have column names for interpretable results. Cannot be a
 vector because the column names are needed.}
 }
 \value{
-A vector of exposures with names being the colnames from
+A vector of exposures with names being the \code{colnames} from
   \code{signatures}.
 }
 \description{
 Quadratic programming optimization of signature activities
 }
 \details{
-Code adapted from \code{SignatureEstimation::decomposeQP}.
+Code adapted from \code{SignatureEstimation::decomposeQP} and
+uses \code{\link[quadprog]{solve.QP}} in package \code{quadprog}.
 }
 \examples{
 usigs <- matrix(c(0.2, 0.7, 0.1,
