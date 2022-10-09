@@ -35,5 +35,5 @@ Suggests:
     testthat (>= 3.0.0),
     sets,
     cosmicsig,
-    PCAWG7
+    ICAMS
 Config/testthat/edition: 3

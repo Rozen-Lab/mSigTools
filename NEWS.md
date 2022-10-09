@@ -1,8 +1,11 @@
 # mSigTools 1.0.6
 * Added function `optimize_exposure_QP`.
-* Added `best_reconstruction_QP`
+* Added `best_reconstruction_QP`.
 * Fixed a bug in function `sig_dist_matrix` when in some very rare cases, some
   cosine similarities can be slightly greater than 1.
+* Fixed a bug in function `plot_exposure_internal` not to plot sample names when
+there are no column names in`exposure`.
+* Removed package `PCAWG7` from Suggests field in DESCRIPTION. Added `ICAMS` as suggested package.
 
 # mSigTools 1.0.5 (submitted to CRAN)
 * Updated test functions in tests/testthat/ folder.
