@@ -127,7 +127,8 @@ sort_exposure <- function(exposure, decreasing = TRUE) {
 #'   \code{NULL}(default), the function tries to do something reasonable.
 #'
 #' @param plot.sample.names Whether to plot sample names below the x axis.
-#'   Default is TRUE.
+#'   Default is TRUE. Ignored if there are no column names on
+#'   \code{exposure}.
 #'
 #' @param yaxis.labels User defined y axis labels to be plotted. If
 #'   \code{NULL}(default), the function tries to do something reasonable.
@@ -343,11 +344,13 @@ plot_exposure_internal <-
         size.adj <- 0.3
       }
       cnames <- colnames(exposure)
-      cnames <- sub("_____.*", "", cnames)
-      if (is.null(cex.xaxis)) {
-        mtext(cnames, side = 1, line = 0.38, at = mp, las = 2, cex = size.adj)
-      } else {
-        mtext(cnames, side = 1, line = 0.38, at = mp, las = 2, cex = cex.xaxis)
+      if (!is.null(cnames)) {
+        cnames <- sub("_____.*", "", cnames)
+        if (is.null(cex.xaxis)) {
+          mtext(cnames, side = 1, line = 0.38, at = mp, las = 2, cex = size.adj)
+        } else {
+          mtext(cnames, side = 1, line = 0.38, at = mp, las = 2, cex = cex.xaxis)
+        }
       }
     }
 

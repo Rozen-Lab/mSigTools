@@ -50,7 +50,8 @@ should be magnified relative to the default. If
 \code{NULL}(default), the function tries to do something reasonable.}
 
 \item{plot.sample.names}{Whether to plot sample names below the x axis.
-Default is TRUE.}
+Default is TRUE. Ignored if there are no column names on
+\code{exposure}.}
 
 \item{yaxis.labels}{User defined y axis labels to be plotted. If
 \code{NULL}(default), the function tries to do something reasonable.}
