@@ -29,11 +29,11 @@ LazyData: true
 RoxygenNote: 7.2.1
 Imports: clue,
     philentropy,
-    quadprog
+    quadprog,
+    sets
 Suggests: 
+    cosmicsig,
+    ICAMS,
     spelling,
     testthat (>= 3.0.0),
-    sets,
-    cosmicsig,
-    ICAMS
 Config/testthat/edition: 3

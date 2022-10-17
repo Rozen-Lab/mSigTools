@@ -6,6 +6,7 @@
 * Fixed a bug in function `plot_exposure_internal` not to plot sample names when
 there are no column names in`exposure`.
 * Removed package `PCAWG7` from Suggests field in DESCRIPTION. Added `ICAMS` as suggested package.
+* Added new dependency package `sets` as it is required in function `best_reconstruction_QP`.
 
 # mSigTools 1.0.5 (submitted to CRAN)
 * Updated test functions in tests/testthat/ folder.

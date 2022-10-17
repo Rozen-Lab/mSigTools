@@ -1,5 +1,6 @@
 test_that("optimize_exposure_QP", {
   skip_if("" == system.file(package = "ICAMS"))
+  skip_if("" == system.file(package = "cosmicsig"))
   spectrum <- ICAMS::ReadCatalog(file = "testdata/SBS96_spectrum.csv")
   rr <- optimize_exposure_QP(spectrum = spectrum,
                              signatures = cosmicsig::COSMIC_v3.0$signature$GRCh37$SBS96[ , 1:5])
