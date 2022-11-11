@@ -85,7 +85,7 @@ best_reconstruction_QP <- function(target.sig,
                       check.attributes = FALSE)
     )) {
     return(list(optimized.exposure = numeric(),
-                method = "Error: all signature.universe columns must sum to 0"))
+                method = "Error: all signature.universe columns must sum to 1"))
   }
 
   if (is.null(colnames(sig.universe))) {
