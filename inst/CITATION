@@ -5,8 +5,8 @@ citEntry(
   title    = "mSigTools: Mutational Signature analysis Tools",
   author   = c(person("Steven", "Rozen"),
                person("Nanhai", "Jiang")),
-  year     = "2022",
-  note     = "R package version 1.0.6",
-  textVersion = paste0("Rozen SG, Jiang NH (2022). ",
-  "mSigTools: Mutational Signature analysis Tools. ", "R package version 1.0.6.")
+  year     = "2023",
+  note     = "R package version 1.0.7",
+  textVersion = paste0("Rozen SG, Jiang NH (2023). ",
+  "mSigTools: Mutational Signature analysis Tools. ", "R package version 1.0.7.")
 )

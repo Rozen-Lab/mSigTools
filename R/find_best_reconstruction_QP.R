@@ -59,33 +59,44 @@
 #'
 #' @examples
 #' set.seed(888)
-#'   sig.u <-
-#' do.call(cbind,
-#'        lapply(1:6, function(x) { col <- runif(n = 96); col/sum(col) }))
-#' rr <- best_reconstruction_QP(target.sig = sig.u[ , 1, drop = FALSE],
-#'                             sig.universe = sig.u[ , 2:6])
+#' sig.u <-
+#'   do.call(
+#'     cbind,
+#'     lapply(1:6, function(x) {
+#'       col <- runif(n = 96)
+#'       col / sum(col)
+#'     })
+#'   )
+#' rr <- find_best_reconstruction_QP(
+#'   target.sig = sig.u[, 1, drop = FALSE],
+#'   sig.universe = sig.u[, 2:6]
+#' )
 #' names(rr)
 #' rr$optimized.exposure
 #' rr$similarity
-#' rr <- best_reconstruction_QP(target.sig = sig.u[ , 1, drop = FALSE],
-#'                             sig.universe = sig.u[ , 2:6],
-#'                             max.subset.size = 3)
+#' rr <- find_best_reconstruction_QP(
+#'   target.sig = sig.u[, 1, drop = FALSE],
+#'   sig.universe = sig.u[, 2:6],
+#'   max.subset.size = 3
+#' )
 #' rr$optimized.exposure
 #' rr$similarity
-
-best_reconstruction_QP <- function(target.sig,
-                                   sig.universe,
-                                   max.subset.size = NULL,
-                                   method          = "cosine",
-                                   trim.less.than  = 1e-10) {
-
+#'
+find_best_reconstruction_QP <- function(target.sig,
+                                        sig.universe,
+                                        max.subset.size = NULL,
+                                        method = "cosine",
+                                        trim.less.than = 1e-10) {
   if (!isTRUE(
     all.equal.numeric(colSums(sig.universe),
-                      rep(1, ncol(sig.universe)),
-                      check.attributes = FALSE)
-    )) {
-    return(list(optimized.exposure = numeric(),
-                method = "Error: all signature.universe columns must sum to 1"))
+      rep(1, ncol(sig.universe)),
+      check.attributes = FALSE
+    )
+  )) {
+    return(list(
+      optimized.exposure = numeric(),
+      method = "Error: all signature.universe columns must sum to 1"
+    ))
   }
 
   if (is.null(colnames(sig.universe))) {
@@ -98,7 +109,7 @@ best_reconstruction_QP <- function(target.sig,
     if (length(to.remove) > 1) {
       optimized.exposure <- optimized.exposure[-to.remove]
     }
-    used.sigs <- sig.u[ , names(optimized.exposure), drop = FALSE]
+    used.sigs <- sig.u[, names(optimized.exposure), drop = FALSE]
     if (length(to.remove) > 1) {
       optimized.exposure <- optimize_exposure_QP(target.sig, used.sigs)
     }
@@ -107,10 +118,12 @@ best_reconstruction_QP <- function(target.sig,
 
     dist <- philentropy::dist_one_one(target.sig, recon, method = method)
 
-    return(list(optimized.exposure = optimized.exposure,
-                similarity         = dist,
-                method             = method,
-                reconstruction     = recon))
+    return(list(
+      optimized.exposure = optimized.exposure,
+      similarity = dist,
+      method = method,
+      reconstruction = recon
+    ))
   }
 
   result1 <- optimize.etc(target.sig, sig.universe)
@@ -122,20 +135,23 @@ best_reconstruction_QP <- function(target.sig,
   cnames <- names(result1[["optimized.exposure"]])
 
   if (length(cnames) < max.subset.size) {
-    max.subset.size <-length(cnames)
+    max.subset.size <- length(cnames)
   }
-  xx <- lapply(1:max.subset.size,
-               function(m) {
-                 xxx <- sets::gset_combn(cnames,  m = m)
-                 return(xxx)
-               })
+  xx <- lapply(
+    1:max.subset.size,
+    function(m) {
+      xxx <- sets::gset_combn(cnames, m = m)
+      return(xxx)
+    }
+  )
   xx <- do.call(sets::gset_union, xx)
 
   one.sig.set <- function(sig.name.set) {
     # browser()
     rrr <- optimize.etc(
       target.sig,
-      sig.universe[ , as.character(sig.name.set), drop = FALSE])
+      sig.universe[, as.character(sig.name.set), drop = FALSE]
+    )
     return(rrr)
   }
 

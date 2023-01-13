@@ -1,3 +1,6 @@
+# mSigTools 1.0.7
+* Renamed exported function `best_reconstruction_QP` to `find_best_reconstruction_QP`.
+
 # mSigTools 1.0.6
 * Added function `optimize_exposure_QP`.
 * Added `best_reconstruction_QP`.

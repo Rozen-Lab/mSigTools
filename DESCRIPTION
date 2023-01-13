@@ -1,7 +1,7 @@
 Package: mSigTools
 Type: Package
 Title: Mutational Signature Analysis Tools
-Version: 1.0.6
+Version: 1.0.7
 Authors@R: 
     c(person(given = "Steven",
              family = "Rozen",
@@ -14,13 +14,13 @@ Authors@R:
              comment = c(ORCID = "0000-0003-4974-2753")))
 Description: Utility functions for mutational signature analysis
              as described in Alexandrov, L. B. (2020)
-             <doi: 10.1038/s41586-020-1943-3>.
+             <doi:10.1038/s41586-020-1943-3>.
              This package provides two groups of functions. One is
              for dealing with mutational signature "exposures"
              (i.e. the counts of mutations in a sample that are
              due to each mutational signature). The other group of
              functions is for matching or comparing sets of 
-             mutational signatures. mSigTools' stands for 
+             mutational signatures. 'mSigTools' stands for 
              mutational Signature analysis Tools. 
 License: GPL-3
 URL: https://github.com/Rozen-Lab/mSigTools
@@ -28,7 +28,7 @@ BugReports: https://github.com/Rozen-Lab/mSigTools/issues
 Encoding: UTF-8
 Language: en-US
 LazyData: true
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Imports: clue,
     philentropy,
     quadprog,
