@@ -12,7 +12,9 @@ Authors@R:
              family = "Jiang",
              role = "aut",
              comment = c(ORCID = "0000-0003-4974-2753")))
-Description: Utility functions for mutational signature analysis.
+Description: Utility functions for mutational signature analysis
+             as described in Alexandrov, L. B. (2020)
+             <doi: 10.1038/s41586-020-1943-3>.
              This package provides two groups of functions. One is
              for dealing with mutational signature "exposures"
              (i.e. the counts of mutations in a sample that are
