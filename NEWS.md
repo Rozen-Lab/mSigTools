@@ -1,4 +1,4 @@
-# mSigTools 1.0.7
+# mSigTools 1.0.7 (submitted to CRAN)
 * Renamed exported function `best_reconstruction_QP` to `find_best_reconstruction_QP`.
 
 # mSigTools 1.0.6
