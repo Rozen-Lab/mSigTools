@@ -260,6 +260,14 @@ plot_exposure_internal <-
     args$density <- NULL
     if (is.null(density)) {
       density <- barplot.density
+    } else {
+      legend.density <- rev(density)
+    }
+
+    border <- args$border
+    args$border <- NULL
+    if (is.null(border)) {
+      border <- "white"
     }
 
     # Ignore column names, we'll plot them separately to make them fit.
@@ -276,7 +284,7 @@ plot_exposure_internal <-
           yaxt = "n", # Do not plot the Y axis
           density = density,
           angle = barplot.angle,
-          border = "white",
+          border = border,
           xlim = xlim,
           ylim = ylim
         ),
@@ -323,7 +331,7 @@ plot_exposure_internal <-
       x.intersp = 0.3,
       y.intersp = 1,
       bty = "n",
-      border = "white",
+      border = border,
       cex = cex.legend,
       title = "Signature"
     )

@@ -1,3 +1,7 @@
+# mSigTools 1.0.8
+* Fixed a bug in function `plot_exposure_internal` when user specifies argument `density`.
+* Enabled user to specify argument `border` in exposure plotting functions.
+
 # mSigTools 1.0.7 (submitted to CRAN)
 * Renamed exported function `best_reconstruction_QP` to `find_best_reconstruction_QP`.
 
